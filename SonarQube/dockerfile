@@ -1,0 +1,18 @@
+#FROM sonatype/nexus3
+#Below we are using an a arguments
+
+ARG VERSION=latest
+FROM sonarqube:$VERSION
+#8.2-community
+
+
+
+
+#COPY [--chown=<user>:<group>] ["<src>",... "<dest>"] 
+COPY ss-devops/sonar.properties /opt/sonarqube/conf
+
+EXPOSE 9000:9000
+
+
+
+#ENTRYPOINT ["executable", "param1", "param2"]
