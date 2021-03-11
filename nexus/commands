@@ -1,0 +1,5 @@
+$ docker volume create hello
+hello
+$ docker run -d -v hello:/world busybox ls /world
+The mount is created inside the container’s /world directory.
+Create a file in the mount to test 
