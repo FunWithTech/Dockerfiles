@@ -1,5 +1,29 @@
-$ docker volume create hello
-hello
-$ docker run -d -v hello:/world busybox ls /world
-The mount is created inside the container’s /world directory.
-Create a file in the mount to test 
+$docker build -t <name> . #Build Image
+
+$docker run -p <HostPort:containerPorts> ImageName # run with exposing ports 
+
+$ docker volume create --name nexus-data  #create a volume 
+
+$ docker docker volume ls  #list the volume 
+
+$ docker volume inspect hello #Inspect the volume 
+
+$ docker run -d -p 8081:8081 --name nexus -v nexus-data:/nexus-data sonatype/nexus3 #Run with mounting storage 
+
+$docker ps
+
+$docker exec -it 8914d509ee69  /bin/bash
+create a file in the mount location and restart to check if the file is still there. 
+
+
+Repository :
+$ docker run -d -p 8081:8081 -p 8082:8082 --name nexus sonatype/nexus3:3.14.0 # also open port 8082
+
+Log into the Nexus and create a new repository 
+Repository --> docker--> HTTP connector port 8082
+
+$docker login 127.0.0.1:8082
+
+Create an image : example Gautam
+
+$docker push gautam:latest
