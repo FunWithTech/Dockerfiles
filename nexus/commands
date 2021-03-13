@@ -24,6 +24,6 @@ Repository --> docker--> HTTP connector port 8082
 
 $docker login 127.0.0.1:8082
 
-Create an image : example Gautam
+Create an image : example:  docker build -t 127.0.0.1:8082/gautam .
 
-$docker push gautam:latest
+$docker push 127.0.0.1:8082/gautam:latest
