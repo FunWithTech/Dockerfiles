@@ -27,3 +27,5 @@ $docker login 127.0.0.1:8082
 Create an image : example:  docker build -t 127.0.0.1:8082/gautam .
 
 $docker push 127.0.0.1:8082/gautam:latest
+
+docker run -d --name sonardemo -p 9000:9000 --mount source=ssdevops,target=/nexus-data sonardemo:latest
